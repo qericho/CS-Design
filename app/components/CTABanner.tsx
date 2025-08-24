@@ -24,8 +24,8 @@ const CTABanner: React.FC = () => {
         </h1>
         <p className="w-full lg:w-150 text-white font-sans text-[1rem] md:text-[1.1rem] mb-10 max-w-2xl font-thin">
           Our interiors and developments team work collaboratively to bring your
-          vision to life. No detail is too small and we're on hand to ensure the
-          design is executed fully and flawlessly.
+          vision to life. No detail is too small and we&apos;re on hand to
+          ensure the design is executed fully and flawlessly.
         </p>
         <Button
           titleBtn="Start My Project"
