@@ -1,5 +1,5 @@
 "use client";
-import MenuBtn from "./buttons/MenuBtn";
+import MenuBtn from "./ui/buttons/MenuBtn";
 import { useMenu } from "../context/MenuContext";
 
 const MobileMenu: React.FC = () => {

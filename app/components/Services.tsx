@@ -1,5 +1,5 @@
 import Title from "./Title";
-import Service from "./ui/Service";
+import Service from "./ui/service/Service";
 const title = "Unlocking your possibilities";
 const p1 =
   "Blending the finest aspects of architecture and interior design with the expertise and craftsmanship of our development team, we compose and build truly extraordinary homes.";

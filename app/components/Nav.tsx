@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { FaPhone } from "react-icons/fa";
-import MenuBtn from "./buttons/MenuBtn";
+import MenuBtn from "./ui/buttons/MenuBtn";
 
 const Nav: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
