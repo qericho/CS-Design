@@ -7,7 +7,7 @@ interface ServiceTitleProps {
 
 const ServiceTitle: React.FC<ServiceTitleProps> = ({ p, h2 }) => {
   return (
-    <div className="w-full lg:w-100 h-full text-start">
+    <div className="w-full lg:w-100 h-full text-white text-start">
       <h2 className="text-[2rem] lg:text-[3.5rem] font-mar">{h2}</h2>
       <p className="font-lato">{p}</p>
       <div className="w-full flex items-center justify-start">
