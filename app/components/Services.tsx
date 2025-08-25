@@ -8,9 +8,9 @@ const p2 =
 
 const Services: React.FC = () => {
   return (
-    <section className="bg-black">
+    <section id="about" className="bg-black">
       <Title title={title} p1={p1} p2={p2} />
-      <div className="space-y-10 lg:space-y-20">
+      <div id="services" className="space-y-10 lg:space-y-20">
         <Service
           imgSrc="/architecture-img.png"
           imgAlt="Architecture"

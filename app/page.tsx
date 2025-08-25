@@ -1,21 +1,24 @@
 "use client";
+import Contact from "./components/Contact";
 import CTABanner from "./components/CTABanner";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
+import Projects from "./components/Projects";
 import Services from "./components/Services";
 import WhyUs from "./components/WhyUs";
-import { MenuProvider } from "./context/MenuContext";
 
 const page = () => {
   return (
     <div>
-      <MenuProvider>
-        <Nav />
-        <Hero />
-      </MenuProvider>
+      <Nav />
+      <Hero />
       <Services />
       <CTABanner />
       <WhyUs />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 };

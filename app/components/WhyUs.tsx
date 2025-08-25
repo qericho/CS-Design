@@ -1,4 +1,9 @@
+"use client";
+
+import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import WhyUsCard from "./ui/card/WhyUsCard";
+
 export const whyUsData = [
   {
     img: "/why-us-img-1.jpg",
@@ -27,20 +32,60 @@ export const whyUsData = [
 ];
 
 const WhyUs: React.FC = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      setWidth(
+        carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
+      );
+    }
+  }, []);
+
   return (
     <section className="bg-black w-full h-full pt-0 md:pt-20">
-      <h2 className=" text-white text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center font-mar">
-        Design <i>with</i> Blenheim
+      <h2 className="text-white text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center font-mar">
+        Why <i>Choose</i> Us
       </h2>
-      <div className="grid place-items-center grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 mt-8 px-2 md:px-10">
-        {whyUsData.map((item, index) => (
-          <WhyUsCard
-            key={index}
-            title={item.title}
-            img={item.img}
-            description={item.description}
-          />
-        ))}
+
+      <div className="mt-8 px-2 md:px-10">
+        {/* Grid for xl */}
+        <div className="hidden xl:grid grid-cols-4 gap-8">
+          {whyUsData.map((item, index) => (
+            <WhyUsCard
+              key={index}
+              title={item.title}
+              img={item.img}
+              description={item.description}
+            />
+          ))}
+        </div>
+
+        {/* Draggable slider */}
+        <motion.div
+          ref={carouselRef}
+          className="flex xl:hidden overflow-hidden cursor-grab active:cursor-grabbing"
+        >
+          <motion.div
+            className="flex gap-6"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+          >
+            {whyUsData.map((item, index) => (
+              <motion.div
+                key={index}
+                className="min-w-[280px] sm:min-w-[320px] md:min-w-[360px]"
+              >
+                <WhyUsCard
+                  title={item.title}
+                  img={item.img}
+                  description={item.description}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 import MenuBtn from "./ui/buttons/MenuBtn";
 import { useMenu } from "../context/MenuContext";
+import Link from "next/link";
 
 const MobileMenu: React.FC = () => {
   const { open, setOpen } = useMenu();
@@ -23,13 +24,18 @@ const MobileMenu: React.FC = () => {
 
           {/* Menu items */}
           <ul className="flex flex-col justify-center gap-4 py-40 px-6 lg:px-20 space-y-6">
-            {["Products", "Services", "Projects", "About us"].map((item) => (
+            {[
+              { label: "About", href: "#about" },
+              { label: "Services", href: "#services" },
+              { label: "Projects", href: "#projects" },
+              { label: "Products", href: "#products" },
+            ].map((item) => (
               <li
-                key={item}
+                key={item.label}
                 className="cursor-pointer text-3xl font-mar transition-opacity duration-300 hover:opacity-70"
                 onClick={() => setOpen(false)} // close menu when clicked
               >
-                {item}
+                <Link href={item.href}>{item.label}</Link>
               </li>
             ))}
           </ul>
@@ -37,7 +43,7 @@ const MobileMenu: React.FC = () => {
           {/* Contact at bottom */}
           <div className="mt-auto px-6 lg:px-20 pb-8 space-y-1">
             <p className="text-sm font-lato">Email: info@cs-design.com</p>
-            <p className="text-sm font-lato">Phone: +63 912 345 6789</p>
+            <p className="text-sm font-lato">Phone: +63 912 345 6569</p>
           </div>
         </div>
 

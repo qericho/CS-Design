@@ -13,8 +13,15 @@ const Nav: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Reusable nav item with hover underline
-  const NavItem = ({ label, font = "" }: { label: string; font?: string }) => (
+  const NavItem = ({
+    label,
+    href,
+    font = "",
+  }: {
+    label: string;
+    href: string;
+    font?: string;
+  }) => (
     <li
       className={`relative inline-block cursor-pointer ${font}
         after:content-[''] after:absolute after:left-0 after:right-0 after:-bottom-[2px]
@@ -22,7 +29,7 @@ const Nav: React.FC = () => {
         after:transition-transform after:duration-300
         hover:after:scale-x-100`}
     >
-      {label}
+      <a href={href}>{label}</a>
     </li>
   );
 
@@ -37,21 +44,21 @@ const Nav: React.FC = () => {
         <div className="flex items-center gap-x-5">
           <MenuBtn />
           <ul className="hidden lg:flex gap-x-5 text-white">
-            <NavItem label="Products" font="font-lato" />
-            <NavItem label="Services" font="font-lato" />
+            <NavItem label="Products" href="#products" font="font-lato" />
+            <NavItem label="Services" href="#services" font="font-lato" />
           </ul>
         </div>
 
-        {/* Logo */}
+        {/* Logo → Home */}
         <h1 className="font-mar text-white font-medium tracking-widest text-xl md:text-2xl lg:text-3xl">
-          CSDESIGN
+          <a href="/">CSDESIGN</a>
         </h1>
 
         {/* Right menu */}
         <ul className="hidden lg:flex gap-x-5 text-white">
-          <NavItem label="Projects" font="font-mar" />
-          <NavItem label="About us" font="font-lato" />
-          <NavItem label="Contact" />
+          <NavItem label="Projects" href="#projects" font="font-mar" />
+          <NavItem label="About" href="#about" font="font-lato" />
+          <NavItem label="Contact" href="#contact" />
         </ul>
 
         {/* Phone icon */}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, Marcellus } from "next/font/google";
 import "./globals.css";
+import { MenuProvider } from "./context/MenuContext";
 
 // Lato → Sans
 const lato = Lato({
@@ -31,7 +32,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lato.variable} ${marcellus.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <MenuProvider>{children}</MenuProvider>
+      </body>
     </html>
   );
 }
