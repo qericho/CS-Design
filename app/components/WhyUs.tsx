@@ -44,7 +44,7 @@ const WhyUs: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-black w-full h-full pt-0 md:pt-20">
+    <section className="bg-black w-full h-full pt-20">
       <h2 className="text-white text-[2rem] md:text-[2.5rem] lg:text-[3rem] text-center font-mar">
         Why <i>Choose</i> Us
       </h2>
