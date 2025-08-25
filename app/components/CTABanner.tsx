@@ -4,7 +4,7 @@ import Button from "./ui/buttons/Button";
 
 const CTABanner: React.FC = () => {
   return (
-    <section className="relative w-full h-170 my-20">
+    <section className="bg-black relative w-full h-170 my-20">
       {/* Background video */}
       <video
         src="/cta-bg.mp4"
