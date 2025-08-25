@@ -10,7 +10,7 @@ const Services: React.FC = () => {
   return (
     <section id="about" className="bg-black">
       <Title title={title} p1={p1} p2={p2} />
-      <div id="services" className="space-y-10 lg:space-y-20">
+      <div id="services" className="space-y-10 lg:space-y-20 pb-30">
         <Service
           imgSrc="/architecture-img.png"
           imgAlt="Architecture"
