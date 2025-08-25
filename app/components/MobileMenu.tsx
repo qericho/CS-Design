@@ -2,6 +2,7 @@
 import MenuBtn from "./ui/buttons/MenuBtn";
 import { useMenu } from "../context/MenuContext";
 import Link from "next/link";
+import Image from "next/image";
 
 const MobileMenu: React.FC = () => {
   const { open, setOpen } = useMenu();
@@ -49,10 +50,11 @@ const MobileMenu: React.FC = () => {
 
         {/* Right image */}
         <div className="flex-1 h-full relative md:flex hidden">
-          <img
+          <Image
             src="/menu-img.jpg"
             alt="sample"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            fill
+            className="object-cover"
           />
         </div>
       </div>

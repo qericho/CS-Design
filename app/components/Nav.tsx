@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { FaPhone } from "react-icons/fa";
 import MenuBtn from "./ui/buttons/MenuBtn";
+import Link from "next/link";
 
 const Nav: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +52,7 @@ const Nav: React.FC = () => {
 
         {/* Logo → Home */}
         <h1 className="font-mar text-white font-medium tracking-widest text-xl md:text-2xl lg:text-3xl">
-          <a href="/">CSDESIGN</a>
+          <Link href="/">CS-DESIGN</Link>
         </h1>
 
         {/* Right menu */}
@@ -63,7 +64,9 @@ const Nav: React.FC = () => {
 
         {/* Phone icon */}
         <div className="flex lg:hidden text-white text-xl">
-          <FaPhone />
+          <Link href="#contact">
+            <FaPhone />
+          </Link>
         </div>
       </div>
     </nav>

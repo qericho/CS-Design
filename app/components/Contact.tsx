@@ -176,7 +176,7 @@ const Contact = () => {
           <div className="flex items-center gap-3">
             <input type="checkbox" id="captcha" required />
             <label htmlFor="captcha" className="text-xs text-black">
-              I'm not a robot
+              I&apos;m not a robot
             </label>
           </div>
 
